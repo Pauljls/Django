@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 # Create your views here.
 
@@ -15,4 +17,12 @@ def index(request):
 def nuevaTarea(request):
     if request.method == 'POST':
         print(request.POST)
-    return render(request,'formTareas.html')
+        nombre = request.POST.get('nombre')
+        descripcion = request.POST.get('descripcion')
+        fechaFin = request.POST.get('fechaFinalizacion')
+        estatus = 'Pendiente'
+        responsable = request.POST.get('responsable')
+        listaTareas.append([nombre,descripcion,fechaFin,estatus,responsable])
+        return HttpResponseRedirect(reverse('tareasApp:index'))
+
+    return render(request,'nuevaTarea.html')

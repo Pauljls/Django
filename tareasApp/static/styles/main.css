@@ -27,11 +27,8 @@ a{
     border-radius: 3px;
     cursor: pointer;
     text-decoration: none;
-    transition: all 0.5s;
 }
-a:hover{
-    transform: scale(2);
-}
+
 table{
     margin-top: 15px;
 }
