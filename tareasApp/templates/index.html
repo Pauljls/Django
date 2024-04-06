@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main-container">
+        <h1>Lista de tareas</h1>
+        <a href="{% url 'tareasApp:nuevaTarea'%}">Nueva Tarea</a>
+        <div>
+            <table>
+                <thead>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Fecha de finalizacion</th>
+                    <th>Estatus</th>
+                    <th>Responsable</th>
+                </thead>
+                <tbody>
+                    {% for tarea in listaTareas %}
+                    <tr>
+                        <td>{{  tarea.0 }}</td>
+                        <td>{{  tarea.1 }}</td>
+                        <td>{{  tarea.2 }}</td>
+                        <td>{{  tarea.3 }}</td>
+                        <td>{{  tarea.4 }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
