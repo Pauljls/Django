@@ -77,11 +77,14 @@ WSGI_APPLICATION = "exParcial.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "django1",
+        "USER" : "postgres",
+        "PASSWORD" : "1052700520",
+        "HOST" : "django1.c5m6m0ooo2it.us-east-2.rds.amazonaws.com",
+        "PORT" : "5432"
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

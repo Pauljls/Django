@@ -10,7 +10,14 @@
 <body>
     <div id="main-container">
         <h1>Lista de tareas</h1>
-        <a href="{% url 'tareasApp:nuevaTarea'%}">Nueva Tarea</a>
+        <div id="buttons-container">
+            <div class="buttons">
+                <a href="{% url 'tareasApp:nuevaTarea'%}">Nueva Tarea</a>
+            </div>
+            <div class="buttons">
+                <a href="{% url 'tareasApp:nuevaTarea'%}">Ver usuario</a>
+            </div>
+        </div>
         <div>
             <table>
                 <thead>
@@ -23,11 +30,11 @@
                 <tbody>
                     {% for tarea in listaTareas %}
                     <tr>
-                        <td>{{  tarea.0 }}</td>
-                        <td>{{  tarea.1 }}</td>
-                        <td>{{  tarea.2 }}</td>
-                        <td>{{  tarea.3 }}</td>
-                        <td>{{  tarea.4 }}</td>
+                        <td>{{  tarea.nombre }}</td>
+                        <td>{{  tarea.descripcion }}</td>
+                        <td>{{  tarea.fechaFin }}</td>
+                        <td>{{  tarea.status }}</td>
+                        <td>{{  tarea.responsable }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

@@ -12,7 +12,7 @@
         <div id="main-container">
             <h1>Crear Nueva tarea</h1>
                 <div id="form-container">
-                    <form action="/nuevaTarea" method="post">
+                    <form action="{% url 'tareasApp:nuevaTarea' %}" method="post">
                         {% csrf_token %}
                         <div>
                             <label>Nombre</label>
