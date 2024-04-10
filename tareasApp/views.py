@@ -11,9 +11,10 @@ from .models import tareas
 #    ['Tarea3','Tarea3','13-04-2024','Pendiente','Harry']
 #]
 
-listaTareas = tareas.objects.all()
+
 
 def index(request):
+    listaTareas = tareas.objects.all()
     return render(request,'index.html',{
         'listaTareas' : listaTareas
     })
